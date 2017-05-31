@@ -1,0 +1,41 @@
+{
+  "name": "Your-Game-Name",
+  "productName": "Your Game's Name",
+  "version": "0.1.0",
+  "description": "Your Game's Description",
+  "devDependencies": {
+    "electron": "^1.6.10",
+    "electron-builder": "^18.2.2"
+  },
+  "scripts": {
+    "pack": "build --dir",
+    "dist": "build -mwl",
+    "postinstall": "install-app-deps",
+    "start": "electron ./app --enable-logging",
+    "dev": "NODE_ENV='development' npm run start"
+  },
+  "author": "Your Name <example@example.com>",
+  "license": "MIT",
+  "build": {
+    "appId": "com.example.mygame",
+    "mac": {
+      "category": "public.app-category.games",
+      "target": [
+        "zip"
+      ]
+    },
+    "linux": {
+      "category": "Game",
+      "target": [
+        "snap",
+        "AppImage",
+        "deb",
+        "rpm",
+        "freebsd",
+        "pacman"
+      ],
+      "executableName": "Your Game's Name",
+      "synopsis": "Your Game's Description"
+    }
+  }
+}
